@@ -1,4 +1,6 @@
 ﻿$(document).ready(function(){
+	// 기존 PC 메뉴 호버 기능 비활성화 (head.php에서 새로운 메뉴 시스템 사용)
+	/*
 	$(".sh_nav").mouseenter(function(){
 		$("#shGnb.main").addClass("on");
 	 	$(".sh_lnb_s").fadeIn(200);
@@ -8,6 +10,8 @@
 		$('.sh_lnb_s').stop().fadeOut(200);
 	  	$('.sh_lnb_bg').stop().fadeOut(200);
 	});
+	*/
+	
 	/* 반응형 [s] */
 	$("#m_navBtn").click(function(){
 		m++;

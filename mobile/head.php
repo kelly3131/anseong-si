@@ -13,7 +13,6 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
  <!-- sh_hd [s] -->
     <header id="sh_hd">
-        <div class="sh_lnb_bg"></div>
     	<div id="sh_hd_wrapper">
             
             <nav id="shGnb">
@@ -42,37 +41,44 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                         <ul class="sh_lnb_s">
                             <li><a href="">운영지원팀</a>
                                 <ul class="sh_lnb_3d">
-                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>시설관리</a></li>
-                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>차량운행</a></li>
-                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>회계관리</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>건강한아침천원식당사업</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>인재육성사업</a></li>
                                 </ul>
                             </li>
                             <li><a href="">문화건강팀</a>
                                 <ul class="sh_lnb_3d">
-                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>여가문화프로그램</a></li>
-                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>건강증진프로그램</a></li>
-                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>평생교육</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>평생교육사업</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>동아리사업</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>상담사업</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>건강생활지원사업</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>기능회복지원사업</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>노인상담사업</a></li>
                                 </ul>
                             </li>
                             <li><a href="">기획홍보팀</a>
                                 <ul class="sh_lnb_3d">
-                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>기획조정</a></li>
-                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>홍보마케팅</a></li>
-                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>자원개발</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>홍보사업</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>일반자원봉사사업</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>노인권익증진사업</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>지역복지연계사업</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>지역사회자원개발사업</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>복리후생사업</a></li>
                                 </ul>
                             </li>
                             <li><a href="">사례관리팀</a>
                                 <ul class="sh_lnb_3d">
-                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>통합사례관리</a></li>
-                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>상담지원</a></li>
-                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>복지연계</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>사례관리</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>재가복지사업</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>경로식당 무료급식사업</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>식사배달지원사업</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>이동세탁서비스사업</a></li>
                                 </ul>
                             </li>
                             <li><a href="">맞춤돌봄팀</a>
                                 <ul class="sh_lnb_3d">
-                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>노인맞춤돌봄서비스</a></li>
-                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>재가복지서비스</a></li>
-                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>응급안전서비스</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>노인맞춤돌봄서비스사업</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>노인맞춤돌봄특화사업</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>응급안전안심서비스사업</a></li>
                                 </ul>
                             </li>
                             <li><a href="">사회참여팀</a>
@@ -247,15 +253,50 @@ $(document).ready(function(){
         }
     });
     
+    // PC 메뉴 호버 기능 - 개별 메뉴만 작동
+    $(".sh_nav > li").each(function(){
+        var $this = $(this);
+        var $subMenu = $this.find('.sh_lnb_s');
+        
+        $this.hover(
+            function(){
+                // 다른 모든 메뉴의 서브메뉴 숨김
+                $('.sh_nav > li').not(this).find('.sh_lnb_s').hide();
+                $('.sh_nav > li').not(this).find('.sh_lnb_3d').hide();
+                // 현재 메뉴의 서브메뉴만 표시
+                $subMenu.stop(true, true).fadeIn(200);
+            },
+            function(){
+                // 현재 메뉴의 서브메뉴 숨김
+                $subMenu.stop(true, true).fadeOut(150);
+                $this.find('.sh_lnb_3d').hide();
+            }
+        );
+    });
+    
     // PC 메뉴 3depth 호버 기능
-    $(".sh_lnb_s > li").hover(
-        function(){
-            $(this).find('.sh_lnb_3d').show();
-        },
-        function(){
-            $(this).find('.sh_lnb_3d').hide();
+    $(".sh_lnb_s > li").each(function(){
+        var $this = $(this);
+        var $subMenu3d = $this.find('.sh_lnb_3d');
+        
+        if($subMenu3d.length > 0) {
+            $this.hover(
+                function(){
+                    // 같은 레벨의 다른 3depth 메뉴 숨김
+                    $this.siblings().find('.sh_lnb_3d').hide();
+                    $subMenu3d.stop(true, true).fadeIn(200);
+                },
+                function(){
+                    $subMenu3d.stop(true, true).fadeOut(150);
+                }
+            );
         }
-    );
+    });
+    
+    // 메뉴 영역을 벗어나면 모든 서브메뉴 숨김
+    $('.sh_nav').mouseleave(function(){
+        $('.sh_lnb_s, .sh_lnb_3d').stop(true, true).fadeOut(150);
+    });
 });
 </script>
 
