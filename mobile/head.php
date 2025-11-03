@@ -30,14 +30,46 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                             <li><a href="">법인소개</a> </li>
                             <li><a href="">인사말</a> </li>
                             <li><a href="">미션 및 비전</a> </li>
+                            <li><a href="">연혁</a> </li>
+                            <li><a href="">조직도</a> </li>
+                            <li><a href="">이용안내</a> </li>
+                            <li><a href="">시설안내</a> </li>
+                            <li><a href="">오시는길</a> </li>
                         </ul>
                     </li>
                     <li>
                         <a href="sub1.html">사업안내</a>
                         <ul class="sh_lnb_s">
-                            <li><a href="">평생교육프로그램</a> </li>
+                            <li><a href="">운영지원팀</a> </li>
+                            <li><a href="">문화건강팀</a> </li>
+                            <li><a href="">기획홍보팀</a> </li>
+                            <li><a href="">사례관리팀</a> </li>
+                            <li><a href="">맞춤돌봄팀</a> </li>
+                            <li><a href="">사회참여팀</a> </li>
+                            <!-- <li><a href="">건강한아침천원식당사업</a> </li>
+                            <li><a href="">인재육성사업</a> </li>
                             <li><a href="">평생교육사업</a> </li>
+                            <li><a href="">동아리사업</a> </li>
                             <li><a href="">상담사업</a> </li>
+                            <li><a href="">건강생활지원사업</a> </li>
+                            <li><a href="">기능회복지원사업</a> </li>
+                            <li><a href="">노인상담사업</a> </li>
+                            <li><a href="">홍보사업</a> </li>
+                            <li><a href="">일반자원봉사사업</a> </li>
+                            <li><a href="">노인권익증진사업</a> </li>
+                            <li><a href="">지역복지연계사업</a> </li>
+                            <li><a href="">지역사회자원개발사업</a> </li>
+                            <li><a href="">복리후생사업</a> </li>
+                            <li><a href="">사례관리</a> </li>
+                            <li><a href="">재가복지사업</a> </li>
+                            <li><a href="">경로식당 무료급식사업</a> </li>
+                            <li><a href="">식사배달지원사업</a> </li>
+                            <li><a href="">이동세탁서비스사업</a> </li>
+                            <li><a href="">노인맞춤돌봄서비스사업</a> </li>
+                            <li><a href="">노인맞춤돌봄특화사업</a> </li>
+                            <li><a href="">응급안전안심서비스사업</a> </li>
+                            <li><a href="">노인자원봉사사업</a> </li>
+                            <li><a href="">노인일자리및사회활동지원사업</a> </li> -->
                         </ul>
                     </li>
                     <li>
@@ -61,6 +93,11 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                             <li><a href="">공지사항</a> </li>
                             <li><a href="">채용안내</a> </li>
                             <li><a href="">이달의행사</a> </li>
+                            <li><a href="">이달의식단</a> </li>
+                            <li><a href="">자료실</a> </li>
+                            <li><a href="">복지관소식</a> </li>
+                            <li><a href="">언론보도</a> </li>
+                            <li><a href="">자유게시판</a> </li>
                         </ul>
                     </li>
                     <li>
@@ -75,7 +112,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
             <!-- 반응형메뉴 [s] -->
             <div id="topmenuM">
-                <h1 id="m_logo"><a href="index.html"><img src="img/common/logo.png" alt="Sample" /></a></h1>
+                <h1 id="m_logo"><a href="index.html"><img src="<?php echo G5_THEME_IMG_URL ?>/mobile/common/logo.png" alt="Sample" /></a></h1>
                 <!-- 메뉴 버튼 -->
                 <div id="m_navBtn"><span></span></div>
                 <!-- 오픈 메뉴 -->

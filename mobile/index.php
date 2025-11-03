@@ -4,13 +4,6 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 include_once(G5_THEME_MOBILE_PATH.'/head.php');
 ?>
 
-<!-- 배너 최신글 -->
-<?php
-// 이 함수가 바로 최신글을 추출하는 역할을 합니다.
-// 사용방법 : latest(스킨, 게시판아이디, 출력라인, 글자수);
-// 테마의 스킨을 사용하려면 theme/basic 과 같이 지정
-echo latest('theme/banner', 'banner', 4, 33);
-?>
    <div id="sh_wrapper">
         <!-- sh_container [s] -->
         <main id="sh_container">
@@ -19,21 +12,89 @@ echo latest('theme/banner', 'banner', 4, 33);
 
                 <!-- sh_section [s] -->
                 <section id="sh_section">
-                    <div>
-                    <img src="<?php echo G5_THEME_IMG_URL ?>/mobile/main/main01.jpg" alt="">
-                    <div class="main_txt">
-                        <p>함께하며 희망의 빛이 되는 복지관<br>안성시노인복지관</p>
-                        안성시노인복지관 홈페이지에 방문해 주신 여러분을 진심으로 환영합니다.
+                    <!-- <div>
+                        <img src="<?php echo G5_THEME_IMG_URL ?>/mobile/main/main01.jpg" alt="">
+                        <div class="main_txt">
+                            <p>함께하며 희망의 빛이 되는 복지관<br>안성시노인복지관</p>
+                            안성시노인복지관 홈페이지에 방문해 주신 여러분을 진심으로 환영합니다.
+                        </div>
+                    </div> -->
+                    <!-- main_banner [s] -->
+                <section id="mainbanner">
+                    <div id="mainVisual">
+                        <div class="swiper main_slide">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <div class="bg bg01"></div>
+                                    <!-- <div class="main_txt">
+                                        <p>함께하며 희망의 빛이 되는 복지관<br>안성시노인복지관</p>
+                                        안성시노인복지관 홈페이지에 방문해 주신 여러분을 진심으로 환영합니다.
+                                    </div> -->
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="bg bg02"></div>
+                                    <!-- <div class="main_txt">
+                                        <p>세상을 마주하며<br>사랑으로 함께 가는 공동체</p>
+                                        방문해주신 모든분들에게 희망의 빛이 되는 복지관을 소개합니다.
+                                    </div> -->
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="bg bg03"></div>
+                                    <!-- <div class="main_txt">
+                                        <p>함께 만드는 행복한 세상,<br>안성시노인복지관</p>
+                                        특별한 나눔을 함께 만들어 갈 여러분들을 기다립니다.
+                                    </div> -->
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="bg bg04"></div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="bg bg05"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="main_control">
+                            <div class="main_arrow">
+                                <span class="main_prev"><i class="fa fa-solid fa-angle-left" aria-hidden="true"></i></span>
+                                <span class="main_next"><i class="fa fa-solid fa-angle-right" aria-hidden="true"></i></span>
+                            </div>
+                            <div class="main_pager"></div>
+                        </div>
                     </div>
-                    </div>
+                    <script>
+                        var mainSwiper = new Swiper(".main_slide", {
+                            loop:true,
+                            effect:'fade',
+                            speed:1400,
+                            slideActiveClass: 'on',
+                            autoplay: {
+                            delay: 3200,
+                            disableOnInteraction: false,
+                            },
+                            pagination: {
+                                el: '#mainVisual .main_pager',
+                                type: "fraction",
+                            },
+                            navigation: {
+                            nextEl: '.main_control .main_next',
+                            prevEl: '.main_control .main_prev',
+                            },
+                        });
+                    </script>
+                </section>
+                <!-- main_banner [e] -->
+
+
+                
                     <!-- inc01 [s] -->
                     <section id="section01">
                         <article id="inc01">
                             <div class="top_box">
                                 <div class="box_inner">
-                                    <div class="left pl"><p>안성시노인복지관은,</p>
-                                        안성시노인복지관은 대한불교조계종사회복지재단의 설립이념과 사회복지 철학을 바탕으로 지역사회를 위한 자비실천을 하고 있습니다.
-                                        안성시노인복지관은 어르신 중심의 사회복지서비스를 제공하고, 지역사회의 자원연계를 통해 어르신들이 건강하고 행복한 노년 생활을 지원하며, 더불어 사는 풍요로운 안성시민을 위한 안성맞춤 노인복지서비스 실천에 정성을 다하겠습니다.안성시노인복지관은 언제나 활기차고 즐거운 어르신이 주인공이 되는 따뜻한 지역공동체를 만들어가기 위해 세대통합 및 어르신 맞춤돌봄서비스는 물론 복지생태계 구축으로 안성맞춤 노인복지를 구현하겠습니다.
+                                    <div class="left pl"><p class="text32 text_bold color_black">안성시노인복지관은,</p>
+                                        <p class="text16 text_normal">안성시노인복지관은 대한불교조계종사회복지재단의 설립이념과 사회복지 철학을 바탕으로 지역사회를 위한 자비실천을 하고 있습니다.</p>
+                                        <p class="text16 text_normal">안성시노인복지관은 어르신 중심의 사회복지서비스를 제공하고, 지역사회의 자원연계를 통해 어르신들이 건강하고 행복한 노년 생활을 지원하며, 더불어 사는 풍요로운 안성시민을 위한 안성맞춤 노인복지서비스 실천에 정성을 다하겠습니다.</p>
+                                        <p class="text16 text_normal">안성시노인복지관은 언제나 활기차고 즐거운 어르신이 주인공이 되는 따뜻한 지역공동체를 만들어가기 위해 세대통합 및 어르신 맞춤돌봄서비스는 물론 복지생태계 구축으로 안성맞춤 노인복지를 구현하겠습니다.</p>
                                         <div class="more"><a href="">복지관 소개 <i data-feather="chevron-right"></i></a></div>
                                     </div>
                                     <div class="right">
@@ -96,7 +157,7 @@ echo latest('theme/banner', 'banner', 4, 33);
                     <section id="section02">
                         <article id="inc02">
                             <div class="inner">
-                                <div class="l_box" data-aos="fade-right">
+                                <div class="l_box">
                                     <div class="latest">
                                         <div class="tit">
                                             <p>복지관 소식</p>
@@ -104,231 +165,78 @@ echo latest('theme/banner', 'banner', 4, 33);
                                                 <li class="on" rel="tab1">공지사항</li>
                                                 <li rel="tab2">자료실</li>
                                                 <li rel="tab3">소식지</li>
-                                                <li rel="tab4">행사정보</li>
+                                                <li rel="tab4">언론보도</li>
                                             </ul>
                                             <a href="" class="more"><span class="sound_only">복지관 소식</span><i data-feather="plus"></i></a>
                                         </div>
                                     </div>
                                     <div id="tabs">
                                         <div class="late_box">
+                                            <?php
+                                            // 최신글 출력 함수
+                                            function get_latest_posts($table, $category, $limit = 6) {
+                                                global $g5;
+                                                $sql = "SELECT wr_id, wr_subject, wr_datetime FROM {$g5['write_prefix']}{$table} WHERE wr_is_comment = 0 ORDER BY wr_num LIMIT {$limit}";
+                                                $result = sql_query($sql);
+                                                
+                                                if(sql_num_rows($result) > 0) {
+                                                    echo '<ul class="n_lt">';
+                                                    $i = 0;
+                                                    while($row = sql_fetch_array($result)) {
+                                                        $class = ($i == 0) ? 'first' : '';
+                                                        $date = date('Y.m.d', strtotime($row['wr_datetime']));
+                                                        $subject = get_text($row['wr_subject']);
+                                                        
+                                                        echo '<li class="'.$class.'">';
+                                                        echo '<a href="'.G5_BBS_URL.'/board.php?bo_table='.$table.'&wr_id='.$row['wr_id'].'">';
+                                                        if($i == 0) {
+                                                            echo '<div class="lt_cont_f">';
+                                                            echo '<p class="cate">'.$category.'</p>';
+                                                            echo '<p class="subj">'.$subject.'</p>';
+                                                            echo '<p class="pc subt">'.$subject.'</p>';
+                                                            echo '<p class="semi_pc subt">'.$subject.'</p>';
+                                                            echo '<span class="date">'.$date.'</span>';
+                                                            echo '</div>';
+                                                        } else {
+                                                            echo '<div class="lt_cont">';
+                                                            echo '<p class="subj">'.$subject.'</p>';
+                                                            echo '<span class="date">'.$date.'</span>';
+                                                            echo '</div>';
+                                                        }
+                                                        echo '</a>';
+                                                        echo '</li>';
+                                                        $i++;
+                                                    }
+                                                    echo '</ul>';
+                                                } else {
+                                                    echo '<p>등록된 '.$category.'가 없습니다.</p>';
+                                                }
+                                            }
+                                            ?>
                                             <div id="tab1" class="late_cont">
                                                 <div class="late">
-                                                    <ul class=" n_lt">
-                                                        <li class="first">
-                                                            <a href="">   
-                                                                <div class="lt_cont_f">
-                                                                    <p class="cate">공지사항</p>
-                                                                    <p class="subj">안성시노인복지관 2025년 8월 업무추진비 사용내역 공개</p>
-                                                                    <p class="pc subt">안성시노인복지관 2025년 8월 업무추진비사용내역을 공개합니다.</p>
-                                                                    <p class="semi_pc subt">안성시노인복지관 2025년 8월 업무추진비사용내역을 공개합니다.</p>
-                                                                    <span class="date">2025.09.02</span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="">   
-                                                                <div class="lt_cont">
-                                                                    <p class="subj">안성시안성시노인복지관 2025년 8월 업무추진비 사용내역 공개</p>
-                                                                    <span class="date">2024.07.19</span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="">   
-                                                                <div class="lt_cont">
-                                                                    <p class="subj">안성시노인복지관 2025년 7월 업무추진비 사용내역 공개</p>
-                                                                    <span class="date">2024.07.19</span>
-                                                                </div>
-                                                                        
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="">   
-                                                                <div class="lt_cont">
-                                                                    <p class="subj">안성시노인복지관 2025년 6월 업무추진비 사용내역 공개</p>
-                                                                    <span class="date">2024.07.19</span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="">   
-                                                                <div class="lt_cont">
-                                                                    <p class="subj">안성시노인복지관 2025년 5월 업무추진비 사용내역 공개</p>
-                                                                    <span class="date">2024.07.19</span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
+                                                    <?php get_latest_posts('notice', '공지사항'); ?>
                                                 </div>
                                             </div>
                                             <div id="tab2" class="late_cont">
                                                 <div class="late">
-                                                    <ul class=" n_lt">
-                                                        <li class="first">
-                                                            <a href="">   
-                                                                <div class="lt_cont_f">
-                                                                    <p class="cate">자료실</p>
-                                                                    <p class="subj">안성시노인복지관 자료실입니다.</p>
-                                                                    <p class="pc subt">안성시노인복지관 자료실입니다.&nbsp;</p>
-                                                                    <p class="semi_pc subt">안성시노인복지관 자료실입니다.&nbsp;</p>
-                                                                    <span class="date">2024.07.24</span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="">   
-                                                                <div class="lt_cont">
-                                                                    <p class="subj">안성시노인복지관 자료실입니다.</p>
-                                                                    <span class="date">2024.07.24</span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="">   
-                                                                <div class="lt_cont">
-                                                                    <p class="subj">안성시노인복지관 자료실입니다.</p>
-                                                                    <span class="date">2024.07.24</span>
-                                                                </div>
-                                                                        
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="">   
-                                                                <div class="lt_cont">
-                                                                    <p class="subj">안성시노인복지관 자료실입니다.</p>
-                                                                    <span class="date">2024.07.24</span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="">   
-                                                                <div class="lt_cont">
-                                                                    <p class="subj">안성시노인복지관 자료실입니다.</p>
-                                                                    <span class="date">2024.07.22</span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="">   
-                                                                <div class="lt_cont">
-                                                                    <p class="subj">안성시노인복지관 자료실입니다.</p>
-                                                                    <span class="date">2024.07.22</span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
+                                                    <?php get_latest_posts('pds', '자료실'); ?>
                                                 </div>
                                             </div>
                                             <div id="tab3" class="late_cont">
                                                 <div class="late">
-                                                    <ul class=" n_lt">
-                                                        <li class="first">
-                                                            <a href="">   
-                                                                <div class="lt_cont_f">
-                                                                    <p class="cate">복지관소식</p>
-                                                                    <p class="subj">복지관 소식 안내입니다.</p>
-                                                                    <p class="pc subt">복지관 소식 안내입니다.</p>
-                                                                    <p class="semi_pc subt">복지관 소식 안내입니다.</p>
-                                                                    <span class="date">2024.07.24</span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="">   
-                                                                <div class="lt_cont">
-                                                                    <p class="subj">복지관 소식 안내입니다.</p>
-                                                                    <span class="date">2024.07.24</span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="">   
-                                                                <div class="lt_cont">
-                                                                    <p class="subj">복지관 소식 안내입니다.</p>
-                                                                    <span class="date">2024.07.24</span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="">   
-                                                                <div class="lt_cont">
-                                                                    <p class="subj">복지관 소식 안내입니다.</p>
-                                                                    <span class="date">2024.07.24</span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="">   
-                                                                <div class="lt_cont">
-                                                                    <p class="subj">복지관 소식 안내입니다.</p>
-                                                                    <span class="date">2024.07.24</span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="">   
-                                                                <div class="lt_cont">
-                                                                    <p class="subj">복지관 소식 안내입니다.</p>
-                                                                    <span class="date">2024.07.24</span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
+                                                    <?php get_latest_posts('news', '소식지'); ?>
                                                 </div>
                                             </div>
                                             <div id="tab4" class="late_cont">
                                                 <div class="late">
-                                                    <ul class=" n_lt">
-                                                        <li class="first">
-                                                            <a href="">   
-                                                                <div class="lt_cont_f">
-                                                                    <p class="cate">행사정보</p>
-                                                                    <p class="subj">복지관 행사정보 소식입니다.</p>
-                                                                    <p class="pc subt">복지관 행사정보 소식입니다.</p>
-                                                                    <p class="semi_pc subt">복지관 행사정보 소식입니다.</p>
-                                                                    <span class="date">2024.07.24</span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="">   
-                                                                <div class="lt_cont">
-                                                                    <p class="subj">복지관 행사정보 소식입니다.</p>
-                                                                    <span class="date">2024.07.24</span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="">   
-                                                                <div class="lt_cont">
-                                                                    <p class="subj">복지관 행사정보 소식입니다.</p>
-                                                                    <span class="date">2024.07.24</span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="">   
-                                                                <div class="lt_cont">
-                                                                    <p class="subj">복지관 행사정보 소식입니다.</p>
-                                                                    <span class="date">2024.07.24</span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="">   
-                                                                <div class="lt_cont">
-                                                                    <p class="subj">복지관 행사정보 소식입니다.</p>
-                                                                    <span class="date">2024.07.24</span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
+                                                    <?php get_latest_posts('bodo', '언론보도'); ?>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="r_box" data-aos="fade-left">
+                                <div class="r_box">
                                     <div class="tit">
                                         <p>웹진</p>  
                                         <a href="" class="more"><span class="sound_only">웹진</span><i data-feather="plus"></i></a>
@@ -344,12 +252,17 @@ echo latest('theme/banner', 'banner', 4, 33);
                                             <ul class="swiper-wrapper">
                                                 <li class="swiper-slide item">
                                                     <a href="">
-                                                        <div class="img"><img src="<?php echo G5_THEME_IMG_URL ?>/mobile/main/inc02/img01.jpg" alt="사랑의 나눔 음악회"></div>
+                                                        <div class="img"><img src="<?php echo G5_THEME_IMG_URL ?>/mobile/main/inc02/img01.png" alt="웹진"></div>
                                                     </a>
                                                 </li>
                                                 <li class="swiper-slide item">
                                                     <a href="">
-                                                        <div class="img"><img src="<?php echo G5_THEME_IMG_URL ?>/mobile/main/inc02/img02.jpg" alt="해바라기 축제"></div>
+                                                        <div class="img"><img src="<?php echo G5_THEME_IMG_URL ?>/mobile/main/inc02/img02.png" alt="웹진"></div>
+                                                    </a>
+                                                </li>
+                                                <li class="swiper-slide item">
+                                                    <a href="">
+                                                        <div class="img"><img src="<?php echo G5_THEME_IMG_URL ?>/mobile/main/inc02/img03.png" alt="웹진"></div>
                                                     </a>
                                                 </li>
                                             </ul>
@@ -411,7 +324,7 @@ echo latest('theme/banner', 'banner', 4, 33);
                                     여러분의 작은 손길이 모여 만들어지는 큰 힘, 더 나은 미래를 함께 만들어주세요.
                                 </div>
                                 <div class="cont_box">
-                                    <div class="left box" data-aos="fade-right">
+                                    <div class="left box">
                                         <p>자원봉사</p>
                                         함께하면 행복한 세상을 만들 수 있습니다.<br>
                                         
@@ -419,7 +332,7 @@ echo latest('theme/banner', 'banner', 4, 33);
                                             <a href="">바로가기 <i data-feather="chevron-right"></i></a>
                                         </div>
                                     </div>
-                                    <div class="right box" data-aos="fade-left">
+                                    <div class="right box">
                                         <p>후원안내</p>
                                         나누는 기쁨 작은 실천으로 시작됩니다.<br>
                                         

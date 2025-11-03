@@ -1,5 +1,10 @@
 // 전체 선택, 개별 선택 체크박스 이미지와 실제 체크박스 체크되도록
 $(document).ready(function(){
+    // Feather 아이콘 초기화 추가
+    if (typeof feather !== 'undefined') {
+        feather.replace();
+    }
+    
     $(".all_chk label").click(function(){
         $(this).toggleClass("click_on");
 
