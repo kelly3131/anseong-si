@@ -40,12 +40,48 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                     <li>
                         <a href="sub1.html">사업안내</a>
                         <ul class="sh_lnb_s">
-                            <li><a href="">운영지원팀</a> </li>
-                            <li><a href="">문화건강팀</a> </li>
-                            <li><a href="">기획홍보팀</a> </li>
-                            <li><a href="">사례관리팀</a> </li>
-                            <li><a href="">맞춤돌봄팀</a> </li>
-                            <li><a href="">사회참여팀</a> </li>
+                            <li><a href="">운영지원팀</a>
+                                <ul class="sh_lnb_3d">
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>시설관리</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>차량운행</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>회계관리</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">문화건강팀</a>
+                                <ul class="sh_lnb_3d">
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>여가문화프로그램</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>건강증진프로그램</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>평생교육</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">기획홍보팀</a>
+                                <ul class="sh_lnb_3d">
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>기획조정</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>홍보마케팅</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>자원개발</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">사례관리팀</a>
+                                <ul class="sh_lnb_3d">
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>통합사례관리</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>상담지원</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>복지연계</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">맞춤돌봄팀</a>
+                                <ul class="sh_lnb_3d">
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>노인맞춤돌봄서비스</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>재가복지서비스</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>응급안전서비스</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">사회참여팀</a>
+                                <ul class="sh_lnb_3d">
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>자원봉사</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>노인일자리</a></li>
+                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i>사회활동지원</a></li>
+                                </ul>
+                            </li>
                             <!-- <li><a href="">건강한아침천원식당사업</a> </li>
                             <li><a href="">인재육성사업</a> </li>
                             <li><a href="">평생교육사업</a> </li>
@@ -130,9 +166,48 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                             <li>
                                 <button class="m_bmenu" type="button">사업안내</button>
                                 <ul class="m_smenu">
-                                    <li><a href="">소분류</a> </li>
-                                    <li><a href="">소분류</a> </li>
-                                    <li><a href="">소분류</a> </li>
+                                    <li><a href="">운영지원팀</a>
+                                        <ul class="m_3dmenu">
+                                            <li><a href="">시설관리</a></li>
+                                            <li><a href="">차량운행</a></li>
+                                            <li><a href="">회계관리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">문화건강팀</a>
+                                        <ul class="m_3dmenu">
+                                            <li><a href="">여가문화프로그램</a></li>
+                                            <li><a href="">건강증진프로그램</a></li>
+                                            <li><a href="">평생교육</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">기획홍보팀</a>
+                                        <ul class="m_3dmenu">
+                                            <li><a href="">기획조정</a></li>
+                                            <li><a href="">홍보마케팅</a></li>
+                                            <li><a href="">자원개발</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">사례관리팀</a>
+                                        <ul class="m_3dmenu">
+                                            <li><a href="">통합사례관리</a></li>
+                                            <li><a href="">상담지원</a></li>
+                                            <li><a href="">복지연계</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">맞춤돌봄팀</a>
+                                        <ul class="m_3dmenu">
+                                            <li><a href="">노인맞춤돌봄서비스</a></li>
+                                            <li><a href="">재가복지서비스</a></li>
+                                            <li><a href="">응급안전서비스</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">사회참여팀</a>
+                                        <ul class="m_3dmenu">
+                                            <li><a href="">자원봉사</a></li>
+                                            <li><a href="">노인일자리</a></li>
+                                            <li><a href="">사회활동지원</a></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </li>
                             <li>
@@ -160,7 +235,29 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
     </header>
     <!-- sh_hd [e] -->
 
-
+<script>
+$(document).ready(function(){
+    // 모바일 메뉴 3depth 토글 기능 추가
+    $(".m_smenu > li > a").click(function(e){
+        var $subMenu = $(this).siblings('.m_3dmenu');
+        if($subMenu.length > 0) {
+            e.preventDefault();
+            $subMenu.slideToggle(300);
+            $(this).toggleClass('active');
+        }
+    });
+    
+    // PC 메뉴 3depth 호버 기능
+    $(".sh_lnb_s > li").hover(
+        function(){
+            $(this).find('.sh_lnb_3d').show();
+        },
+        function(){
+            $(this).find('.sh_lnb_3d').hide();
+        }
+    );
+});
+</script>
 
 <div id="wrapper">
 
