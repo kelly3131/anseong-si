@@ -9,23 +9,61 @@ include_once(G5_LIB_PATH.'/visit.lib.php');
 include_once(G5_LIB_PATH.'/connect.lib.php');
 include_once(G5_LIB_PATH.'/popular.lib.php');
 
-// 콘텐츠 페이지 배경 이미지 처리
+// 배경 이미지 처리
+$menu_group = '';
+
+// 1. 콘텐츠 페이지인 경우
 if(isset($_GET['co_id']) && !empty($_GET['co_id'])) {
     $co_id = clean_xss_tags($_GET['co_id']);
     $menu_parts = explode('_', $co_id);
     if(count($menu_parts) > 0) {
-        $menu_group = $menu_parts[0]; // m1, m2, m3 등 추출
-        $bg_image_path = G5_THEME_IMG_URL . '/mobile/sub/' . $menu_group . '.png';
-        
-        add_stylesheet('<style>
-        #container_title {
-            background-image: url("'.$bg_image_path.'") !important;
-            background-size: cover !important;
-            background-position: center !important;
-            background-repeat: no-repeat !important;
-        }
-        </style>', 999);
+        $menu_group = $menu_parts[0]; // m1, m2, m3 등
     }
+}
+// 2. 게시판 페이지인 경우
+else if(isset($_GET['bo_table']) && !empty($_GET['bo_table'])) {
+    $bo_table = clean_xss_tags($_GET['bo_table']);
+    
+    // 게시판별 메뉴 그룹 매핑
+    $board_to_menu = array(
+        // 알림마당 (m5)
+        'notice' => 'm5',
+        'recruit' => 'm5', 
+        'schedule' => 'm5',
+        'calendar' => 'm5',
+        'calendar2' => 'm5',
+        'calendar3' => 'm5',
+        'pds' => 'm5',
+        'news' => 'm5',
+        'bodo' => 'm5',
+        'review' => 'm5',
+        
+        // 복지관이야기 (m6)
+        'photo' => 'm6',
+        
+        // 후원 관련 (m3)
+        'sponsor' => 'm3',
+        'sponsor2' => 'm3',
+        'spon_news' => 'm3'
+    );
+    
+    if(isset($board_to_menu[$bo_table])) {
+        $menu_group = $board_to_menu[$bo_table];
+    }
+}
+
+// 배경 이미지 적용
+if(!empty($menu_group)) {
+    $bg_image_path = G5_THEME_IMG_URL . '/mobile/sub/' . $menu_group . '.png';
+    
+    add_stylesheet('<style>
+    #container_title {
+        background-image: url("'.$bg_image_path.'") !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+    }
+    </style>', 999);
 }
 
 ?>
@@ -66,9 +104,9 @@ if(isset($_GET['co_id']) && !empty($_GET['co_id'])) {
                             </li>
                             <li class="has-submenu"><a href="/bbs/content.php?co_id=m2_s2_1">문화건강팀</a>
                                 <ul class="sh_lnb_3d">
-                                    <li><a href="/bbs/content.php?co_id=m2_s2_1">평생교육사업</a></li>
-                                    <li><a href="/bbs/content.php?co_id=m2_s2_2">동아리사업</a></li>
-                                    <li><a href="/bbs/content.php?co_id=m2_s2_3">상담사업</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s2_1">상담사업</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s2_2">평생교육사업</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s2_3">동아리활동지원사업</a></li>
                                     <li><a href="/bbs/content.php?co_id=m2_s2_4">건강생활지원사업</a></li>
                                     <li><a href="/bbs/content.php?co_id=m2_s2_5">기능회복지원사업</a></li>
                                     <li><a href="/bbs/content.php?co_id=m2_s2_6">노인상담사업</a></li>
