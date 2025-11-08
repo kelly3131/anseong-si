@@ -9,6 +9,25 @@ include_once(G5_LIB_PATH.'/visit.lib.php');
 include_once(G5_LIB_PATH.'/connect.lib.php');
 include_once(G5_LIB_PATH.'/popular.lib.php');
 
+// 콘텐츠 페이지 배경 이미지 처리
+if(isset($_GET['co_id']) && !empty($_GET['co_id'])) {
+    $co_id = clean_xss_tags($_GET['co_id']);
+    $menu_parts = explode('_', $co_id);
+    if(count($menu_parts) > 0) {
+        $menu_group = $menu_parts[0]; // m1, m2, m3 등 추출
+        $bg_image_path = G5_THEME_IMG_URL . '/mobile/sub/' . $menu_group . '.png';
+        
+        add_stylesheet('<style>
+        #container_title {
+            background-image: url("'.$bg_image_path.'") !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+        }
+        </style>', 999);
+    }
+}
+
 ?>
 
  <!-- sh_hd [s] -->
@@ -18,80 +37,80 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             <nav id="shGnb">
                 <!-- 로고 -->
                 <div class="sh_logo">
-                    <a href="index.html"><img src="<?php echo G5_THEME_IMG_URL ?>/mobile/logo.png" alt=""></a>
+                    <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_THEME_IMG_URL ?>/mobile/logo.png" alt=""></a>
                 </div>
                 <!-- 상단메뉴 -->
                 <ul class="sh_nav">
                     <li>
-                        <a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m1_s1">복지관소개</a>
+                        <a href="/bbs/content.php?co_id=m1_s1">복지관소개</a>
                         <ul class="sh_lnb_s">
-                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m1_s1">회사소개</a> </li>
-                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m1_s2">법인소개</a> </li>
-                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m1_s3">인사말</a> </li>
-                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m1_s4">미션 및 비전</a> </li>
-                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m1_s5">연혁</a> </li>
-                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m1_s6">조직도</a> </li>
-                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m1_s7">이용안내</a> </li>
-                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m1_s8">시설안내</a> </li>
-                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m1_s9">오시는길</a> </li>
+                            <li><a href="/bbs/content.php?co_id=m1_s1">회사소개</a> </li>
+                            <li><a href="/bbs/content.php?co_id=m1_s2">법인소개</a> </li>
+                            <li><a href="/bbs/content.php?co_id=m1_s3">인사말</a> </li>
+                            <li><a href="/bbs/content.php?co_id=m1_s4">미션 및 비전</a> </li>
+                            <li><a href="/bbs/content.php?co_id=m1_s5">연혁</a> </li>
+                            <li><a href="/bbs/content.php?co_id=m1_s6">조직도</a> </li>
+                            <li><a href="/bbs/content.php?co_id=m1_s7">이용안내</a> </li>
+                            <li><a href="/bbs/content.php?co_id=m1_s8">시설안내</a> </li>
+                            <li><a href="/bbs/content.php?co_id=m1_s9">오시는길</a> </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s1">사업안내</a>
+                        <a href="/bbs/content.php?co_id=m2_s1">사업안내</a>
                         <ul class="sh_lnb_s">
-                            <li class="has-submenu"><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s1_1">운영지원팀</a>
+                            <li class="has-submenu"><a href="/bbs/content.php?co_id=m2_s1_1">운영지원팀</a>
                                 <ul class="sh_lnb_3d">
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s1_1">건강한아침천원식당사업</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s1_2">인재육성사업</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s1_1">건강한아침천원식당사업</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s1_2">인재육성사업</a></li>
                                 </ul>
                             </li>
-                            <li class="has-submenu"><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s2_1">문화건강팀</a>
+                            <li class="has-submenu"><a href="/bbs/content.php?co_id=m2_s2_1">문화건강팀</a>
                                 <ul class="sh_lnb_3d">
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s2_1">평생교육사업</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s2_2">동아리사업</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s2_3">상담사업</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s2_4">건강생활지원사업</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s2_5">기능회복지원사업</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s2_6">노인상담사업</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s2_1">평생교육사업</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s2_2">동아리사업</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s2_3">상담사업</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s2_4">건강생활지원사업</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s2_5">기능회복지원사업</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s2_6">노인상담사업</a></li>
                                 </ul>
                             </li>
-                            <li class="has-submenu"><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s3_1">기획홍보팀</a>
+                            <li class="has-submenu"><a href="/bbs/content.php?co_id=m2_s3_1">기획홍보팀</a>
                                 <ul class="sh_lnb_3d">
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s3_1">홍보사업</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s3_2">일반자원봉사사업</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s3_3">노인권익증진사업</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s3_4">지역복지연계사업</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s3_5">지역사회자원개발사업</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s3_6">복리후생사업</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s3_1">홍보사업</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s3_2">일반자원봉사사업</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s3_3">노인권익증진사업</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s3_4">지역복지연계사업</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s3_5">지역사회자원개발사업</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s3_6">복리후생사업</a></li>
                                 </ul>
                             </li>
-                            <li class="has-submenu"><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s4_1">사례관리팀</a>
+                            <li class="has-submenu"><a href="/bbs/content.php?co_id=m2_s4_1">사례관리팀</a>
                                 <ul class="sh_lnb_3d">
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s4_1">사례관리</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s4_2">재가복지사업</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s4_3">경로식당 무료급식사업</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s4_4">식사배달지원사업</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s4_5">이동세탁서비스사업</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s4_1">사례관리</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s4_2">재가복지사업</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s4_3">경로식당 무료급식사업</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s4_4">식사배달지원사업</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s4_5">이동세탁서비스사업</a></li>
                                 </ul>
                             </li>
-                            <li class="has-submenu"><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s5_1">맞춤돌봄팀</a>
+                            <li class="has-submenu"><a href="/bbs/content.php?co_id=m2_s5_1">맞춤돌봄팀</a>
                                 <ul class="sh_lnb_3d">
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s5_1">노인맞춤돌봄서비스사업</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s5_2">노인맞춤돌봄특화사업</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s5_3">응급안전안심서비스사업</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s5_1">노인맞춤돌봄서비스사업</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s5_2">노인맞춤돌봄특화사업</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s5_3">응급안전안심서비스사업</a></li>
                                 </ul>
                             </li>
-                            <li class="has-submenu"><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s6_1">사회참여팀</a>
+                            <li class="has-submenu"><a href="/bbs/content.php?co_id=m2_s6_1">사회참여팀</a>
                                 <ul class="sh_lnb_3d">
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s6_1">자원봉사</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s6_2">노인일자리</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s6_3">사회활동지원</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s6_1">자원봉사</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s6_2">노인일자리</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m2_s6_3">사회활동지원</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m3_s1">후원안내</a>
+                        <a href="/bbs/content.php?co_id=m3_s1">후원안내</a>
                         <ul class="sh_lnb_s">
                             <li><a href="<?php echo G5_BBS_URL ?>/board.php?co_id=sponsor2">후원안내</a> </li>
                             <li><a href="<?php echo G5_BBS_URL ?>/board.php?co_id=sponsor">후원신청</a> </li>
@@ -99,10 +118,10 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                         </ul>
                     </li>
                     <li>
-                        <a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m4_s1">봉사안내</a>
+                        <a href="/bbs/content.php?co_id=m4_s1">봉사안내</a>
                         <ul class="sh_lnb_s">
-                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m4_s1">자원봉사안내</a> </li>
-                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m4_s2">자원봉사신청</a> </li>
+                            <li><a href="/bbs/content.php?co_id=m4_s1">자원봉사안내</a> </li>
+                            <li><a href="/bbs/content.php?co_id=m4_s2">자원봉사신청</a> </li>
                         </ul>
                     </li>
                     <li>
@@ -121,9 +140,9 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                             <li><a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=pds">자료실</a> </li>
                             <li class="has-submenu"><a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=news">복지관소식</a>
                                 <ul class="sh_lnb_3d">
-                                    <li><a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=news&sca=운영위원회">운영위원회공개</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=news&sca=후원공개">후원공개</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=news&sca=예산공개">예산공개</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m5_s6_1">운영위원회공개</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m5_s6_3">후원공개</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m5_s6_3">">예산공개</a></li>
                                 </ul>
                             </li>
                             <li><a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=bodo">언론보도</a> </li>
@@ -152,67 +171,67 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                             <li>
                                 <button class="m_bmenu" type="button">복지관소개</button>
                                 <ul class="m_smenu">
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m1_s1">회사소개</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m1_s2">법인소개</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m1_s3">인사말</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m1_s4">미션 및 비전</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m1_s5">연혁</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m1_s6">조직도</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m1_s7">이용안내</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m1_s8">시설안내</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m1_s9">오시는길</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m1_s1">회사소개</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m1_s2">법인소개</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m1_s3">인사말</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m1_s4">미션 및 비전</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m1_s5">연혁</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m1_s6">조직도</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m1_s7">이용안내</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m1_s8">시설안내</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m1_s9">오시는길</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <button class="m_bmenu" type="button">사업안내</button>
                                 <ul class="m_smenu">
-                                    <li class="has-mobile-submenu"><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s1_1">운영지원팀</a>
+                                    <li class="has-mobile-submenu"><a href="/bbs/content.php?co_id=m2_s1_1">운영지원팀</a>
                                         <ul class="m_3dmenu">
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s1_1">건강한아침천원식당사업</a></li>
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s1_2">인재육성사업</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s1_1">건강한아침천원식당사업</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s1_2">인재육성사업</a></li>
                                         </ul>
                                     </li>
-                                    <li class="has-mobile-submenu"><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s2_1">문화건강팀</a>
+                                    <li class="has-mobile-submenu"><a href="/bbs/content.php?co_id=m2_s2_1">문화건강팀</a>
                                         <ul class="m_3dmenu">
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s2_1">평생교육사업</a></li>
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s2_2">동아리사업</a></li>
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s2_3">상담사업</a></li>
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s2_4">건강생활지원사업</a></li>
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s2_5">기능회복지원사업</a></li>
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s2_6">노인상담사업</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s2_1">평생교육사업</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s2_2">동아리사업</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s2_3">상담사업</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s2_4">건강생활지원사업</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s2_5">기능회복지원사업</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s2_6">노인상담사업</a></li>
                                         </ul>
                                     </li>
-                                    <li class="has-mobile-submenu"><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s3_1">기획홍보팀</a>
+                                    <li class="has-mobile-submenu"><a href="/bbs/content.php?co_id=m2_s3_1">기획홍보팀</a>
                                         <ul class="m_3dmenu">
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s3_1">홍보사업</a></li>
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s3_2">일반자원봉사사업</a></li>
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s3_3">노인권익증진사업</a></li>
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s3_4">지역복지연계사업</a></li>
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s3_5">지역사회자원개발사업</a></li>
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s3_6">복리후생사업</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s3_1">홍보사업</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s3_2">일반자원봉사사업</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s3_3">노인권익증진사업</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s3_4">지역복지연계사업</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s3_5">지역사회자원개발사업</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s3_6">복리후생사업</a></li>
                                         </ul>
                                     </li>
-                                    <li class="has-mobile-submenu"><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s4_1">사례관리팀</a>
+                                    <li class="has-mobile-submenu"><a href="/bbs/content.php?co_id=m2_s4_1">사례관리팀</a>
                                         <ul class="m_3dmenu">
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s4_1">사례관리</a></li>
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s4_2">재가복지사업</a></li>
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s4_3">경로식당 무료급식사업</a></li>
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s4_4">식사배달지원사업</a></li>
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s4_5">이동세탁서비스사업</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s4_1">사례관리</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s4_2">재가복지사업</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s4_3">경로식당 무료급식사업</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s4_4">식사배달지원사업</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s4_5">이동세탁서비스사업</a></li>
                                         </ul>
                                     </li>
-                                    <li class="has-mobile-submenu"><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s5_1">맞춤돌봄팀</a>
+                                    <li class="has-mobile-submenu"><a href="/bbs/content.php?co_id=m2_s5_1">맞춤돌봄팀</a>
                                         <ul class="m_3dmenu">
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s5_1">노인맞춤돌봄서비스사업</a></li>
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s5_2">노인맞춤돌봄특화사업</a></li>
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s5_3">응급안전안심서비스사업</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s5_1">노인맞춤돌봄서비스사업</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s5_2">노인맞춤돌봄특화사업</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s5_3">응급안전안심서비스사업</a></li>
                                         </ul>
                                     </li>
-                                    <li class="has-mobile-submenu"><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s6_1">사회참여팀</a>
+                                    <li class="has-mobile-submenu"><a href="/bbs/content.php?co_id=m2_s6_1">사회참여팀</a>
                                         <ul class="m_3dmenu">
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s6_1">자원봉사</a></li>
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s6_2">노인일자리</a></li>
-                                            <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m2_s6_3">사회활동지원</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s6_1">자원봉사</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s6_2">노인일자리</a></li>
+                                            <li><a href="/bbs/content.php?co_id=m2_s6_3">사회활동지원</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -228,8 +247,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                             <li>
                                 <button class="m_bmenu" type="button">봉사안내</button>
                                 <ul class="m_smenu">
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m4_s1">자원봉사안내</a></li>
-                                    <li><a href="<?php echo G5_BBS_URL ?>/content.php?co_id=m4_s2">자원봉사신청</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m4_s1">자원봉사안내</a></li>
+                                    <li><a href="/bbs/content.php?co_id=m4_s2">자원봉사신청</a></li>
                                 </ul>
                             </li>
                             <li>
